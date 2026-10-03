@@ -1,5 +1,5 @@
 html {
-      background-color: #b74900;
+      background-color: deepskyblue;
       height: 100vh;
 }
 
@@ -13,4 +13,21 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+}
+
+.link-1 {
+  color: crimson;
+}
+
+.link-2 {
+  color: darkred;
+}
+
+.link-3 {
+  color: firebrick;
+}
+
+.author {
+  color: tomato;
+  font-weight: bold;
 }
