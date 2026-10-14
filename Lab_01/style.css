@@ -40,3 +40,34 @@ th,
 td {
   border: 1px solid black;
 }
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+}
+
+.square-1 {
+  background-color: #2b423f;;
+}
+
+.square-2 {
+  background-color: #df7a5f;
+}
+
+.square-3 {
+  background-color: #f4f1de;
+}
+
+.square-4 {
+  background-color: #f2cc8f;
+}
+
+.square-5 {
+  background-color: #3d5a80;
+}
