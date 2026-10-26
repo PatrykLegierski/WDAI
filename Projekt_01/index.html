@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polskie Siły Powietrzne - Strona Fanowska</title>
+    <!-- Podłączenie wspólnego arkusza stylów CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Spójny nagłówek i nawigacja (taka sama na każdej podstronie) -->
+    <header>
+        <div class="logo">
+            <h1>Polskie Siły Powietrzne</h1>
+            <p>Nieoficjalny serwis pasjonatów lotnictwa wojskowego</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="f16.html">F-16 Jastrząb</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Główna zawartość strony (zmienia się w zależności od podstrony) -->
+    <main>
+
+        <!-- Sekcja 1: Wstęp / Artykuł (adaptacja zadania z Lab 1) -->
+        <section id="o-projekcie">
+            <article>
+                <h2>Strażnicy Polskiego Nieba</h2>
+                <p>
+                    Polskie Siły Powietrzne to jeden z kluczowych rodzajów Sił Zbrojnych RP, 
+                    odpowiedzialny za obronę przestrzeni powietrznej kraju oraz wsparcie 
+                    sojusznicze w ramach NATO.
+                </p>
+                <p>
+                    Na tej stronie znajdziesz informacje o współczesnych samolotach bojowych, 
+                    dane taktyczno-techniczne oraz materiały multimedialne z pokazów lotniczych.
+                </p>
+            </article>
+        </section>
+
+        <!-- Sekcja 2: Kafelki floty (adaptacja kafelków z Lab 1 pod Flexbox lub Grid) -->
+        <section id="flota">
+            <h2>Współczesna Flota Bojowa</h2>
+            
+            <!-- Kontener, któremu w CSS nadasz display: flex lub display: grid -->
+            <div class="kafelki-kontener">
+                
+                <article class="kafelek">
+                    <img src="media/f16-miniatura.jpg" alt="Polski myśliwiec F-16 Jastrząb podczas kołowania">
+                    <h3>F-16 Jastrząb</h3>
+                    <p>Podstawowy wielozadaniowy samolot bojowy polskich sił powietrznych.</p>
+                    <a href="f16.html">Zobacz szczegóły &rarr;</a>
+                </article>
+
+                <article class="kafelek">
+                    <img src="media/fa50-miniatura.jpg" alt="Lekki samolot bojowy FA-50GF w locie">
+                    <h3>FA-50 Golden Eagle</h3>
+                    <p>Lekki samolot bojowo-szkolny pozyskany z Korei Południowej.</p>
+                </article>
+
+                <article class="kafelek">
+                    <img src="media/f35-miniatura.jpg" alt="Myśliwiec piątej generacji F-35A Husarz">
+                    <h3>F-35A Husarz</h3>
+                    <p>Nowoczesny samolot 5. generacji o obniżonej wykrywalności (stealth).</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Sekcja 3: Multimedia (wymagany element <video>) -->
+        <section id="wideo">
+            <h2>Siły Powietrzne w akcji</h2>
+            <p>Nagranie z przelotu demonstracyjnego podczas pokazów Air Show:</p>
+            
+            <video controls width="800">
+                <source src="media/pokaz-lotniczy.mp4" type="video/mp4">
+                Twoja przeglądarka nie obsługuje odtwarzacza wideo HTML5.
+            </video>
+        </section>
+
+    </main>
+
+    <!--  stopka z imieniem i nazwiskiem  -->
+    <footer>
+        <p>&copy; 2026 Autor: Patryk Legierski | Projekt: Wprowadzenie do aplikacji internetowych</p>
+    </footer>
+
+</body>
+</html>
