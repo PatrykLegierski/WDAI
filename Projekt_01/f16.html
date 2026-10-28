@@ -1,10 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-16C/D Jastrząb | Siły Powietrzne RP</title>
+    <!-- Czcionki Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Wspólny arkusz stylów -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- TŁO PARALAKSY: Niebo i chmury reagujące na scrollowanie -->
+<div class="sky-container" aria-hidden="true">
+    <div class="sky-layer"></div>
+    <div class="clouds-layer"></div>
+</div>
+
+<!-- GÓRNY PASEK PAŃSTWOWY + NAWIGACJA -->
+<header class="main-header">
+    <div class="gov-bar">
+        <span class="flag-pl"></span>
+        <span>SIŁY POWIETRZNE RZECZYPOSPOLITEJ POLSKIEJ — SERWIS PASJONACKI</span>
+    </div>
+
+    <div class="nav-container">
+        <div class="logo">
+            <svg class="checkerboard" viewBox="0 0 100 100" width="42" height="42">
+                <rect width="100" height="100" fill="#ffffff"/>
+                <rect x="0" y="0" width="50" height="50" fill="#dc143c"/>
+                <rect x="50" y="50" width="50" height="50" fill="#dc143c"/>
+                <rect x="5" y="5" width="90" height="90" fill="none" stroke="#ffffff" stroke-width="6"/>
+            </svg>
+            <div class="logo-text">
+                <h1>SIŁY POWIETRZNE RP</h1>
+                <p>SERWIS PASJONACKI</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">STRONA GŁÓWNA</a></li>
+                <li><a href="f16.html" class="active">F-16</a></li>
+                <li><a href="fa50.html">FA-50</a></li>
+                <li><a href="f35.html">F-35</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- GŁÓWNA ZAWARTOŚĆ PODSTRONY -->
+<main>
+
+    <!-- SEKCJA 1: WSTĘP I ARTYKUŁ GŁÓWNY -->
+    <section class="subpage-hero">
+        <article class="hero-card subpage-intro">
+            <h2>F-16C/D Block 52+ Jastrząb</h2>
+            <p>
+                Od listopada 2006 roku samoloty F-16 Jastrząb stanowią trzon lotnictwa bojowego
+                Sił Powietrznych RP. Polska dysponuje 48 maszynami (36 jednomiejscowymi w wersji C
+                oraz 12 dwumiejscowymi szkolno-bojowymi w wersji D), które stacjonują w 31. Bazie
+                Lotnictwa Taktycznego w Poznaniu-Krzesinach oraz 32. BLT w Łasku.
+            </p>
+            <p>
+                Polskie Jastrzębie należą do jednej z najbardziej zaawansowanych wersji tego myśliwca
+                w Europie – zostały wyposażone w konforemne zbiorniki paliwa (CFT), zaawansowany
+                system walki radioelektronicznej oraz możliwość przenoszenia pocisków manewrujących
+                dalekiego zasięgu AGM-158 JASSM.
+            </p>
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <span class="stat-value">Mach 2.0</span>
+                    <span class="stat-label">PRĘDKOŚĆ MAKS.</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">47 szt.</span>
+                    <span class="stat-label">W SŁUŻBIE RP</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">15 240 m</span>
+                    <span class="stat-label">PUŁAP PRAKTYCZNY</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">+9.0 G</span>
+                    <span class="stat-label">PRZECIĄŻENIE</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- SEKCJA 2: SCROLL-DRIVEN IMAGE SHOWCASE -->
+    <section id="anatomia" class="content-section">
+        <div class="section-header">
+            <h2>Anatomia Technologiczna Jastrzębia</h2>
+            <p>Przewijaj sekcję w dół, aby przeanalizować kluczowe systemy bojowe płatowca</p>
+        </div>
+
+        <div class="scroll-showcase">
+
+            <!-- LEWA KOLUMNA: PRZYKLEJONY OBRAZ (STICKY HUD) -->
+            <div class="sticky-visual">
+                <div class="hud-frame">
+                    <div class="hud-top-bar">
+                        <span>SYS: F-16C BLK 52+</span>
+                        <span id="hud-mode-label">TRYB: ANALIZA PŁATOWCA</span>
+                        <span>ALT: 24 500 FT</span>
+                    </div>
+
+                    <div class="showcase-img-container">
+                        <img id="showcase-main-img"
+                             src="assets/img/f16_image1.jpg"
+                             onerror="this.src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80'"
+                             alt="Widok taktyczny myśliwca F-16 Jastrząb w interfejsie HUD">
+                        <!-- Celownik taktyczny nakładany na zdjęcie -->
+                        <div class="hud-crosshair" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="hud-bottom-bar">
+                        <span id="hud-step-indicator">SEKCJA 01 / 04</span>
+                        <span>BAZA: 31. BLT KRZESINY / 32. BLT ŁASK</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRAWA KOLUMNA: PRZEWIJANE KARTY OPISU -->
+            <div class="scroll-steps">
+
+                <article class="step-card" data-step="01" data-title="PŁATOWIEC I ZBIORNIKI CFT">
+                    <span class="step-number">MODUŁ 01</span>
+                    <h3>Aerodynamika i Zbiorniki Konforemne (CFT)</h3>
+                    <p>
+                        Konstrukcja F-16 została zaprojektowana w układzie celowej stateczności
+                        zredukowanej, kontrolowanej przez poczwórnie redundantny cyfrowy układ
+                        sterowania lotem <strong>Fly-by-Wire</strong>. Pozwala to na wykonywanie
+                        gwałtownych manewrów przy przeciążeniach sięgających +9G.
+                    </p>
+                    <p>
+                        Charakterystycznym elementem polskich maszyn są nadkadłubowe zbiorniki
+                        konforemne CFT (Conformal Fuel Tanks), które mieszczą dodatkowe 1700 litrów
+                        paliwa, znacząco zwiększając promień działania bez pogarszania właściwości
+                        aerodynamicznych i bez zajmowania węzłów podskrzydłowych.
+                    </p>
+                </article>
+
+                <article class="step-card" data-step="02" data-title="RADAR I AWIONIKA">
+                    <span class="step-number">MODUŁ 02</span>
+                    <h3>Radar AN/APG-68(V)9 i Zasobnik Sniper XR</h3>
+                    <p>
+                        W części dziobowej zainstalowano wieloczynnościowy radar impulsowo-dopplerowski
+                        <strong>AN/APG-68(V)9</strong> z syntetyczną aperturą (SAR). Umożliwia on
+                        jednoczesne śledzenie wielu celów powietrznych oraz tworzenie wysokorozdzielczych
+                        map terenu niezależnie od zachmurzenia i pory doby.
+                    </p>
+                    <p>
+                        Uzupełnieniem radaru jest podwieszany zasobnik celowniczy <strong>AN/AAQ-33 Sniper XR</strong>,
+                        zapewniający identyfikację wizualną i termowizyjną z kilkudziesięciu kilometrów
+                        oraz naprowadzanie amunicji kierowanej laserowo.
+                    </p>
+                </article>
+
+                <article class="step-card" data-step="03" data-title="SYSTEMY UZBROJENIA">
+                    <span class="step-number">MODUŁ 03</span>
+                    <h3>Uzbrojenie Powietrze–Powietrze i Powietrze–Ziemia</h3>
+                    <p>
+                        Do walki powietrznej Jastrząb wykorzystuje kierowane radarowo pociski średniego
+                        zasięgu <strong>AIM-120C AMRAAM</strong> oraz supermanewrowe pociski bliskiego
+                        zasięgu <strong>AIM-9X Sidewinder</strong> sprzężone z celownikiem nahełmowym
+                        pilota JHMCS (pilot namierza cel spojrzeniem).
+                    </p>
+                    <p>
+                        W zadaniach uderzeniowych polskie F-16 przenoszą pociski manewrujące
+                        o obniżonej wykrywalności <strong>AGM-158 JASSM</strong>, bomby kierowane
+                        satelitarnie JDAM, laserowo Paveway II/III oraz zabudowane na stałe sześciolufowe
+                        działko <strong>M61A1 Vulcan kal. 20 mm</strong> (6000 strzałów na minutę).
+                    </p>
+                </article>
+
+                <article class="step-card" data-step="04" data-title="JEDNOSTKA NAPĘDOWA">
+                    <span class="step-number">MODUŁ 04</span>
+                    <h3>Silnik Turbowentylatorowy F100-PW-229</h3>
+                    <p>
+                        Sercem polskich egzemplarzy F-16 Block 52+ jest silnik dwuprzepływowy
+                        <strong>Pratt &amp; Whitney F100-PW-229</strong> z dopalaczem. Generuje on ciąg
+                        79,1 kN bez dopalania oraz aż <strong>129,4 kN z pełnym dopalaniem</strong>.
+                    </p>
+                    <p>
+                        Wysoki stosunek ciągu do masy pozwala maszynie na błyskawiczne wznoszenie
+                        (ponad 250 m/s) oraz przekraczanie dwukrotnej prędkości dźwięku na dużym pułapie,
+                        co jest kluczowe podczas przechwytywania celów w misjach NATO Air Policing.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKCJA 3: TABELA TAKTYCZNO-TECHNICZNA (ADAPTACJA TABELI Z LAB 1) -->
+    <section id="specyfikacja" class="content-section">
+        <div class="section-header">
+            <h2>Specyfikacja Taktyczno-Techniczna</h2>
+            <p>Zestawienie parametrów wersji F-16C/D Block 52+ eksploatowanej w Polsce</p>
+        </div>
+
+        <div class="table-container">
+            <table class="tech-table">
+                <thead>
+                <tr>
+                    <th>Kategoria</th>
+                    <th>Parametr</th>
+                    <th>Wartość / Specyfikacja</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Producent</strong></td>
+                    <td>Główny wykonawca</td>
+                    <td>Lockheed Martin Aeronautics (USA)</td>
+                </tr>
+                <tr>
+                    <td><strong>Wymiary</strong></td>
+                    <td>Rozpiętość skrzydeł / Długość / Wysokość</td>
+                    <td>9,96 m / 15,06 m / 4,88 m</td>
+                </tr>
+                <tr>
+                    <td><strong>Masa</strong></td>
+                    <td>Masa własna / Maksymalna masa startowa</td>
+                    <td>8 570 kg / 19 200 kg</td>
+                </tr>
+                <tr>
+                    <td><strong>Napęd</strong></td>
+                    <td>Silnik turbowentylatorowy</td>
+                    <td>1 × Pratt &amp; Whitney F100-PW-229 (129,4 kN z dopalaniem)</td>
+                </tr>
+                <tr>
+                    <td><strong>Osiągi</strong></td>
+                    <td>Prędkość maksymalna</td>
+                    <td>Mach 2,05 (ok. 2 120 km/h na wysokim pułapie)</td>
+                </tr>
+                <tr>
+                    <td><strong>Zasięg</strong></td>
+                    <td>Zasięg do przebazowania (ze zbiornikami CFT)</td>
+                    <td>ponad 4 200 km</td>
+                </tr>
+                <tr>
+                    <td><strong>Uzbrojenie stałe</strong></td>
+                    <td>Artyleria pokładowa</td>
+                    <td>Działko sześciolufowe M61A1 Vulcan kal. 20 mm (511 nabojów)</td>
+                </tr>
+                <tr>
+                    <td><strong>Węzły podwieszeń</strong></td>
+                    <td>Liczba punktów mocowania uzbrojenia</td>
+                    <td>9 węzłów (udźwig uzbrojenia do 7 700 kg)</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SEKCJA 4: GALERIA ZDJĘĆ (CSS GRID) -->
+    <section id="galeria" class="content-section">
+        <div class="section-header">
+            <h2>Galeria Operacyjna F-16</h2>
+            <p>Dokumentacja fotograficzna ze służby w 31. i 32. Bazie Lotnictwa Taktycznego</p>
+        </div>
+
+        <div class="gallery-grid">
+            <figure class="gallery-item">
+                <img src="assets/img/f16_image1.jpg"
+                     onerror="this.src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80'"
+                     alt="Polski myśliwiec F-16C Jastrząb podczas lotu patrolowego ponad chmurami">
+                <figcaption>F-16C podczas dyżuru bojowego w przestrzeni powietrznej RP</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/img/f16_image2.jpg"
+                     onerror="this.src='https://images.unsplash.com/photo-1519074069444-1ba4ea16e66c?auto=format&fit=crop&w=800&q=80'"
+                     alt="Myśliwiec F-16 wykonujący ciasny wiraż z widocznymi smugami kondensacyjnymi">
+                <figcaption>Manewr wysokiego przeciążenia podczas treningu Tiger Demo Team</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/img/f16_image3.jpg"
+                     onerror="this.src='https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80'"
+                     alt="Samolot F-16 Jastrząb przygotowywany przez obsługę naziemną na płycie lotniska">
+                <figcaption>Obsługa przedlotowa na płycie 31. Bazy Lotnictwa Taktycznego</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/img/f16_image4.jpg"
+                     onerror="this.src='https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80'"
+                     alt="Para myśliwców F-16 startująca z włączonym dopalaczem o zmierzchu">
+                <figcaption>Nocny start z dopalaniem w ramach ćwiczeń sojuszniczych NATO</figcaption>
+            </figure>
+        </div>
+    </section>
+
+</main>
+
+<!-- STOPKA -->
+<footer>
+    <div class="footer-inner">
+        <p>&copy; 2026 Autor: <strong>Patryk Legierski</strong> | Projekt: Wprowadzenie do aplikacji internetowych</p>
+        <p class="footer-note">Strona ma charakter fanowski i hobbystyczny. Nie jest oficjalnym serwisem MON ani WP.</p>
+    </div>
+</footer>
 
 </body>
 </html>
