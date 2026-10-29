@@ -1,10 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA-50 Golden Eagle | Siły Powietrzne RP</title>
+    <!-- Ikona karty przeglądarki (Favicon) - Polska Szachownica Lotnicza -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ffffff'/%3E%3Crect x='0' y='0' width='50' height='50' fill='%23dc143c'/%3E%3Crect x='50' y='50' width='50' height='50' fill='%23dc143c'/%3E%3Crect x='5' y='5' width='90' height='90' fill='none' stroke='%23ffffff' stroke-width='6'/%3E%3C/svg%3E">
+    <!-- Czcionki Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Wspólny arkusz stylów -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- TŁO PARALAKSY: Niebo i chmury reagujące na scrollowanie -->
+<div class="sky-container" aria-hidden="true">
+    <div class="sky-layer"></div>
+    <div class="clouds-layer"></div>
+</div>
+
+<!-- GÓRNY PASEK PAŃSTWOWY + NAWIGACJA -->
+<header class="main-header">
+    <div class="gov-bar">
+        <span class="flag-pl"></span>
+        <span>SIŁY POWIETRZNE RZECZYPOSPOLITEJ POLSKIEJ — SERWIS PASJONACKI</span>
+    </div>
+
+    <div class="nav-container">
+        <div class="logo">
+            <svg class="checkerboard" viewBox="0 0 100 100" width="42" height="42">
+                <rect width="100" height="100" fill="#ffffff"/>
+                <rect x="0" y="0" width="50" height="50" fill="#dc143c"/>
+                <rect x="50" y="50" width="50" height="50" fill="#dc143c"/>
+                <rect x="5" y="5" width="90" height="90" fill="none" stroke="#ffffff" stroke-width="6"/>
+            </svg>
+            <div class="logo-text">
+                <h1>SIŁY POWIETRZNE RP</h1>
+                <p>SERWIS PASJONACKI</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">STRONA GŁÓWNA</a></li>
+                <li><a href="f16.html">F-16</a></li>
+                <li><a href="fa50.html" class="active">FA-50</a></li>
+                <li><a href="f35.html">F-35</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- GŁÓWNA ZAWARTOŚĆ PODSTRONY -->
+<main>
+
+    <!-- SEKCJA 1: WSTĘP I ARTYKUŁ GŁÓWNY -->
+    <section class="subpage-hero">
+        <article class="hero-card subpage-intro">
+            <h2>KAI FA-50GF / PL Golden Eagle</h2>
+            <p>
+                KAI FA-50 Golden Eagle to lekki, dwumiejscowy, naddźwiękowy samolot bojowo-szkolny
+                opracowany przez południowokoreański koncern Korea Aerospace Industries (KAI)
+                we współpracy z amerykańskim Lockheed Martin. W Polskich Siłach Powietrznych maszyna
+                zastąpiła wysłużone samoloty postsowieckie MiG-29 oraz Su-22, stacjonując w 23. Bazie
+                Lotnictwa Taktycznego w Mińsku Mazowieckim.
+            </p>
+            <p>
+                Polska zamówiła łącznie 48 egzemplarzy: 12 maszyn w wariancie pomostowym
+                <strong>FA-50GF (Gap Filler)</strong> dostarczonych w 2023 roku oraz 36 maszyn
+                w docelowym, wysoce zaawansowanym standardzie <strong>FA-50PL Block 20</strong>,
+                wyposażonym w radar AESA i sondę do tankowania w powietrzu.
+            </p>
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <span class="stat-value">Mach 1.5</span>
+                    <span class="stat-label">PRĘDKOŚĆ MAKS.</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">48 szt.</span>
+                    <span class="stat-label">ZAMÓWIONYCH (12 GF + 36 PL)</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">14 600 m</span>
+                    <span class="stat-label">PUŁAP PRAKTYCZNY</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">+8.0 G</span>
+                    <span class="stat-label">PRZECIĄŻENIE</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- SEKCJA 2: SCROLL-DRIVEN IMAGE SHOWCASE -->
+    <section id="anatomia" class="content-section">
+        <div class="section-header">
+            <h2>Architektura Bojowa FA-50</h2>
+            <p>Przewijaj sekcję w dół, aby poznać systemy pokładowe południowokoreańskiego drapieżnika</p>
+        </div>
+
+        <div class="scroll-showcase">
+
+            <!-- LEWA KOLUMNA: PRZYKLEJONY OBRAZ (STICKY HUD) -->
+            <div class="sticky-visual">
+                <div class="hud-frame">
+                    <div class="hud-top-bar">
+                        <span>SYS: KAI FA-50GF/PL</span>
+                        <span id="hud-mode-label">TRYB: ANALIZA PŁATOWCA</span>
+                        <span>ALT: 18 200 FT</span>
+                    </div>
+
+                    <div class="showcase-img-container">
+                        <img id="showcase-main-img"
+                             src="assets/img/fa50_image1.jpeg"
+                             onerror="this.src='https://images.unsplash.com/photo-1519074069444-1ba4ea16e66c?auto=format&fit=crop&w=1200&q=80'"
+                             alt="Widok taktyczny samolotu FA-50 Golden Eagle w interfejsie HUD">
+                        <div class="hud-crosshair" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="hud-bottom-bar">
+                        <span id="hud-step-indicator">SEKCJA 01 / 04</span>
+                        <span>BAZA: 23. BLT MIŃSK MAZOWIECKI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRAWA KOLUMNA: PRZEWIJANE KARTY OPISU -->
+            <div class="scroll-steps">
+
+                <article class="step-card" data-step="01" data-title="KOMPATYBILNOŚĆ Z F-16" data-img="assets/img/fa50_image1.jpeg">
+                    <span class="step-number">MODUŁ 01</span>
+                    <h3>Pokrewieństwo Konstrukcyjne z F-16</h3>
+                    <p>
+                        Płatowiec FA-50 powstał przy bezpośrednim udziale inżynierów Lockheed Martin,
+                        dzięki czemu dzieli około <strong>70–80% podobieństwa ergonomii kokpitu i logiki
+                        systemów z myśliwcem F-16</strong>. Posiada cyfrowy układ sterowania lotem
+                        Fly-by-Wire oraz boczny drążek sterowy (sidestick).
+                    </p>
+                    <p>
+                        Taka architektura drastycznie skraca i obniża koszty szkolenia polskich pilotów
+                        przesiadających się na F-16 Jastrząb oraz F-35A Husarz, pozwalając jednocześnie
+                        na wykonywanie pełnoprawnych misji patrolowych Air Policing.
+                    </p>
+                </article>
+
+                <article class="step-card" data-step="02" data-title="RADAR I AWIONIKA" data-img="assets/img/fa50_radar.jpeg">
+                    <span class="step-number">MODUŁ 02</span>
+                    <h3>Stacja Radiolokacyjna i Zasobnik Sniper</h3>
+                    <p>
+                        Wersja pomostowa FA-50GF wykorzystuje sprawdzony radar impulsowo-dopplerowski
+                        <strong>EL/M-2032</strong>, natomiast docelowy wariant <strong>FA-50PL Block 20</strong>
+                        zostanie wyposażony w nowoczesny radar z aktywnym skanowaniem elektronicznym
+                        <strong>PhantomStrike AESA</strong>.
+                    </p>
+                    <p>
+                        Maszyny w standardzie PL otrzymają także doskonale znane z polskich F-16
+                        zasobniki celownicze <strong>AN/AAQ-33 Sniper XR</strong>, zintegrowane
+                        z nahełmowym systemem wyświetlania i celowania Scorpion HMDS oraz łączem
+                        wymiany danych taktycznych NATO Link 16.
+                    </p>
+                </article>
+
+                <article class="step-card" data-step="03" data-title="UZBROJENIE PRECYZYJNE" data-img="assets/img/fa50_bron.jpeg">
+                    <span class="step-number">MODUŁ 03</span>
+                    <h3>Uzbrojenie Powietrze–Powietrze i Powietrze–Ziemia</h3>
+                    <p>
+                        FA-50 dysponuje wbudowanym, trzylufowym działkiem napędowym systemu Gatlinga
+                        <strong>M197 kal. 20 mm</strong> oraz siedmioma węzłami podwieszeń o łącznym
+                        udźwigu do 4500 kg uzbrojenia i dodatkowych zbiorników paliwa.
+                    </p>
+                    <p>
+                        Arsenał obejmuje pociski powietrze–powietrze <strong>AIM-9X Sidewinder</strong>,
+                        kierowane pociski powietrze–ziemia <strong>AGM-65 Maverick</strong>, a także
+                        bomby kierowane satelitarnie (JDAM) oraz laserowo (GBU-12 Paveway II).
+                    </p>
+                </article>
+
+                <article class="step-card" data-step="04" data-title="JEDNOSTKA NAPĘDOWA" data-img="assets/img/fa50_image2.jpeg">
+                    <span class="step-number">MODUŁ 04</span>
+                    <h3>Silnik General Electric F404-GE-102</h3>
+                    <p>
+                        Napęd samolotu stanowi niezawodny silnik turbowentylatorowy
+                        <strong>General Electric F404-GE-102</strong> z dopalaczem, kontrolowany przez
+                        dwukanałowy cyfrowy system FADEC. Jednostka generuje ciąg maksymalny
+                        <strong>78,7 kN z dopalaniem</strong>.
+                    </p>
+                    <p>
+                        Silnik pozwala lekkiej konstrukcji FA-50 na osiągnięcie prędkości
+                        naddźwiękowej <strong>Mach 1.5</strong> oraz prędkości wznoszenia sięgającej
+                        198 m/s, zapewniając błyskawiczny czas reakcji podczas dyżurów bojowych.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKCJA 3: TABELA TAKTYCZNO-TECHNICZNA -->
+    <section id="specyfikacja" class="content-section">
+        <div class="section-header">
+            <h2>Specyfikacja Taktyczno-Techniczna</h2>
+            <p>Zestawienie parametrów samolotów KAI FA-50GF / FA-50PL w Siłach Powietrznych RP</p>
+        </div>
+
+        <div class="table-container">
+            <table class="tech-table">
+                <thead>
+                <tr>
+                    <th>Kategoria</th>
+                    <th>Parametr</th>
+                    <th>Wartość / Specyfikacja</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Producent</strong></td>
+                    <td>Główny wykonawca</td>
+                    <td>Korea Aerospace Industries (KAI) / Lockheed Martin</td>
+                </tr>
+                <tr>
+                    <td><strong>Załoga</strong></td>
+                    <td>Konfiguracja kabiny</td>
+                    <td>2 pilotów (układ tandem)</td>
+                </tr>
+                <tr>
+                    <td><strong>Wymiary</strong></td>
+                    <td>Rozpiętość skrzydeł / Długość / Wysokość</td>
+                    <td>9,45 m / 13,14 m / 4,82 m</td>
+                </tr>
+                <tr>
+                    <td><strong>Masa</strong></td>
+                    <td>Masa własna / Maksymalna masa startowa</td>
+                    <td>6 470 kg / 12 300 kg</td>
+                </tr>
+                <tr>
+                    <td><strong>Napęd</strong></td>
+                    <td>Silnik turbowentylatorowy</td>
+                    <td>1 × General Electric F404-GE-102 (78,7 kN z dopalaniem)</td>
+                </tr>
+                <tr>
+                    <td><strong>Osiągi</strong></td>
+                    <td>Prędkość maksymalna</td>
+                    <td>Mach 1,5 (ok. 1 830 km/h)</td>
+                </tr>
+                <tr>
+                    <td><strong>Zasięg</strong></td>
+                    <td>Zasięg przebazowania</td>
+                    <td>1 850 km (w wersji PL zwiększony dzięki sondzie do tankowania)</td>
+                </tr>
+                <tr>
+                    <td><strong>Uzbrojenie stałe</strong></td>
+                    <td>Artyleria pokładowa</td>
+                    <td>Trzylufowe działko M197 kal. 20 mm (205 nabojów)</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SEKCJA 4: GALERIA ZDJĘĆ (CSS GRID) -->
+    <section id="galeria" class="content-section">
+        <div class="section-header">
+            <h2>Galeria Operacyjna FA-50</h2>
+            <p>Polskie egzemplarze FA-50GF w służbie 23. Bazy Lotnictwa Taktycznego</p>
+        </div>
+
+        <div class="gallery-grid">
+            <figure class="gallery-item">
+                <img src="assets/img/fa50_image1.jpeg"
+                     onerror="this.src='https://images.unsplash.com/photo-1519074069444-1ba4ea16e66c?auto=format&fit=crop&w=800&q=80'"
+                     alt="Polski samolot bojowy FA-50GF Golden Eagle podczas manewru w powietrzu">
+                <figcaption>FA-50GF podczas lotu treningowego nad Mazowszem</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/img/fa50_image2.jpeg"
+                     onerror="this.src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80'"
+                     alt="Zbliżenie na samolot FA-50 z polską szachownicą">
+                <figcaption>Dwumiejscowy FA50 podczas startu</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/img/fa50_radar.jpeg"
+                     onerror="this.src='https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80'"
+                     alt="AESA PhantomStrike RTX (Raytheon)">
+                <figcaption>FA-50PL otrzyma zaawansowany radar AESA PhantomStrike firmy RTX</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/img/fa50_bron.jpeg"
+                     onerror="this.src='https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80'"
+                     alt="Pokaz uzbrojenia FA 50 Block 20 na płycie lotniska">
+                <figcaption>Pociski 9X Sidewinder i bobmby szybujace GBU 64 JDAM ER</figcaption>
+            </figure>
+        </div>
+    </section>
+
+</main>
+
+<!-- STOPKA -->
+<footer>
+    <div class="footer-inner">
+        <p>&copy; 2026 Autor: <strong>Patryk Legierski</strong> | Projekt: Wprowadzenie do aplikacji internetowych</p>
+        <p class="footer-note">Strona ma charakter fanowski i hobbystyczny. Nie jest oficjalnym serwisem MON ani WP.</p>
+    </div>
+</footer>
 
 </body>
 </html>

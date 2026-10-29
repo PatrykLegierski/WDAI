@@ -1,10 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-35A Husarz | Siły Powietrzne RP</title>
+    <!-- Ikona karty przeglądarki (Favicon) - Polska Szachownica Lotnicza -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ffffff'/%3E%3Crect x='0' y='0' width='50' height='50' fill='%23dc143c'/%3E%3Crect x='50' y='50' width='50' height='50' fill='%23dc143c'/%3E%3Crect x='5' y='5' width='90' height='90' fill='none' stroke='%23ffffff' stroke-width='6'/%3E%3C/svg%3E">
+    <!-- Czcionki Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Wspólny arkusz stylów -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- TŁO PARALAKSY: Niebo i chmury reagujące na scrollowanie -->
+<div class="sky-container" aria-hidden="true">
+    <div class="sky-layer"></div>
+    <div class="clouds-layer"></div>
+</div>
+
+<!-- GÓRNY PASEK PAŃSTWOWY + NAWIGACJA -->
+<header class="main-header">
+    <div class="gov-bar">
+        <span class="flag-pl"></span>
+        <span>SIŁY POWIETRZNE RZECZYPOSPOLITEJ POLSKIEJ — SERWIS PASJONACKI</span>
+    </div>
+
+    <div class="nav-container">
+        <div class="logo">
+            <svg class="checkerboard" viewBox="0 0 100 100" width="42" height="42">
+                <rect width="100" height="100" fill="#ffffff"/>
+                <rect x="0" y="0" width="50" height="50" fill="#dc143c"/>
+                <rect x="50" y="50" width="50" height="50" fill="#dc143c"/>
+                <rect x="5" y="5" width="90" height="90" fill="none" stroke="#ffffff" stroke-width="6"/>
+            </svg>
+            <div class="logo-text">
+                <h1>SIŁY POWIETRZNE RP</h1>
+                <p>SERWIS PASJONACKI</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">STRONA GŁÓWNA</a></li>
+                <li><a href="f16.html">F-16</a></li>
+                <li><a href="fa50.html">FA-50</a></li>
+                <li><a href="f35.html" class="active">F-35</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- GŁÓWNA ZAWARTOŚĆ PODSTRONY -->
+<main>
+
+    <!-- SEKCJA 1: WSTĘP I ARTYKUŁ GŁÓWNY -->
+    <section class="subpage-hero">
+        <article class="hero-card subpage-intro">
+            <h2>F-35A Lightning II „Husarz”</h2>
+            <p>
+                Lockheed Martin F-35A Lightning II, noszący w Siłach Powietrznych RP oficjalną nazwę
+                <strong>„Husarz”</strong>, stanowi technologiczny skok pokoleniowy w zdolnościach
+                obronnych Polski. W ramach programu „Harpia” zamówiono 32 maszyny w najnowocześniejszej
+                konfiguracji <strong>Technology Refresh 3 (TR-3) / Block 4</strong>, które trafią
+                do 32. Bazy Lotnictwa Taktycznego w Łasku oraz 21. Bazy Lotnictwa Taktycznego w Świdwinie.
+            </p>
+            <p>
+                Dzięki zaawansowanej technologii obniżonej wykrywalności (Stealth) oraz bezprecedensowej
+                fuzji danych z sensorów pokładowych, polski F-35A pełni rolę nie tylko samolotu uderzeniowego
+                i myśliwskiego, ale przede wszystkim latającego centrum dowodzenia i rozpoznania,
+                koordynującego działania F-16, FA-50 oraz naziemnych baterii przeciwlotniczych Patriot.
+            </p>
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <span class="stat-value">Mach 1.6</span>
+                    <span class="stat-label">PRĘDKOŚĆ MAKS.</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">32 szt.</span>
+                    <span class="stat-label">ZAKONTRAKTOWANYCH</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">191 kN</span>
+                    <span class="stat-label">CIĄG Z DOPALANIEM</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">+9.0 G</span>
+                    <span class="stat-label">PRZECIĄŻENIE</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- SEKCJA 2: SCROLL-DRIVEN IMAGE SHOWCASE -->
+    <section id="anatomia" class="content-section">
+        <div class="section-header">
+            <h2>Technologia 5. Generacji w Detalach</h2>
+            <p>Przewijaj sekcję w dół, aby przeanalizować systemy Stealth oraz fuzję sensorów Husarza</p>
+        </div>
+
+        <div class="scroll-showcase">
+
+            <!-- LEWA KOLUMNA: PRZYKLEJONY OBRAZ (STICKY HUD) -->
+            <div class="sticky-visual">
+                <div class="hud-frame">
+                    <div class="hud-top-bar">
+                        <span>SYS: F-35A TR-3 BLK 4</span>
+                        <span id="hud-mode-label">TRYB: ANALIZA STEALTH</span>
+                        <span>ALT: 35 000 FT</span>
+                    </div>
+
+                    <div class="showcase-img-container">
+                        <img id="showcase-main-img"
+                             src="assets/img/f35_image1.jpeg"
+                             onerror="this.src='https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80'"
+                             alt="Widok taktyczny myśliwca piątej generacji F-35A Husarz w interfejsie HUD">
+                        <div class="hud-crosshair" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="hud-bottom-bar">
+                        <span id="hud-step-indicator">SEKCJA 01 / 04</span>
+                        <span>BAZA: 32. BLT ŁASK / 21. BLT ŚWIDWIN</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRAWA KOLUMNA: PRZEWIJANE KARTY OPISU -->
+            <div class="scroll-steps">
+
+                <article class="step-card" data-step="01" data-title="TECHNOLOGIA STEALTH I RAM" data-img="assets/img/f35_image1.jpeg">
+                    <span class="step-number">MODUŁ 01</span>
+                    <h3>Obniżona Wykrywalność (Stealth) i Szachownica Low-Vis</h3>
+                    <p>
+                        Geometria płatowca F-35A została ukształtowana tak, aby rozpraszać fale
+                        radarowe przeciwnika z dala od anteny nadawczej. Całe poszycie pokryto
+                        zaawansowanymi materiałami pochłaniającymi promieniowanie elektromagnetyczne
+                        (<strong>RAM – Radar Absorbent Material</strong>), a wloty powietrza typu DSI
+                        osłaniają łopatki sprężarki silnika przed opromieniowaniem.
+                    </p>
+                    <p>
+                        Aby nie naruszać właściwości Stealth, polskie F-35A otrzymały specjalne
+                        oznakowanie <strong>Low-Visibility</strong> – szachownice lotnicze wykonano
+                        w odcieniach szarości z certyfikowanych farb rozpraszających fale radarowe.
+                    </p>
+                </article>
+
+                <article class="step-card" data-step="02" data-title="FUZJA SENSORÓW I DAS" data-img="assets/img/f35_radar.jpeg">
+                    <span class="step-number">MODUŁ 02</span>
+                    <h3>Radar AN/APG-81 AESA oraz System AN/AAQ-37 DAS</h3>
+                    <p>
+                        Komputer centralny w standardzie <strong>TR-3</strong> łączy w czasie rzeczywistym
+                        dane z radaru z aktywnym skanowaniem elektronicznym <strong>AN/APG-81 AESA</strong>,
+                        wewnętrznego systemu elektrooptycznego <strong>EOTS</strong> oraz zaawansowanego
+                        systemu walki radioelektronicznej AN/ASQ-239 Barracuda.
+                    </p>
+                    <p>
+                        Dzięki sześciu kamerom na podczerwień systemu <strong>AN/AAQ-37 DAS</strong>
+                        rozmieszczonym wokół kadłuba oraz hełmowi <strong>Gen III HMDS</strong>, pilot
+                        dosłownie „widzi przez podłogę i poszycie samolotu” w pełnych 360 stopniach.
+                    </p>
+                </article>
+
+                <article class="step-card" data-step="03" data-title="KOMORY WEWNĘTRZNE I TRYB BEAST" data-img="assets/img/f35_image2.jpeg">
+                    <span class="step-number">MODUŁ 03</span>
+                    <h3>Komory Uzbrojenia i Konfiguracja „Beast Mode”</h3>
+                    <p>
+                        W misjach wymagających pełnej niewykrywalności (First Day of War) F-35A
+                        przenosi uzbrojenie w dwóch zamykanych komorach wewnętrznych: pociski
+                        powietrze–powietrze <strong>AIM-120D AMRAAM</strong>, bomby szybujące
+                        <strong>GBU-39 SDB II</strong> lub pociski uderzeniowe <strong>JSM</strong>,
+                        a także wewnętrzne czterolufowe działko <strong>GAU-22/A kal. 25 mm</strong>.
+                    </p>
+                    <p>
+                        Po wywalczeniu przewagi w powietrzu maszyna może przejść w tzw.
+                        <strong>„Beast Mode”</strong>, wykorzystując dodatkowe węzły podskrzydłowe
+                        i zabierając łącznie ponad <strong>8 160 kg uzbrojenia</strong>.
+                    </p>
+                </article>
+
+                <article class="step-card" data-step="04" data-title="SILNIK PRATT & WHITNEY F135" data-img="assets/img/f35_radar.jpeg">
+                    <span class="step-number">MODUŁ 04</span>
+                    <h3>Najpotężniejszy Silnik Myśliwski Świata F135-PW-100</h3>
+                    <p>
+                        Husarz jest napędzany pojedynczym silnikiem turbowentylatorowym
+                        <strong>Pratt &amp; Whitney F135-PW-100</strong>, który generuje aż
+                        <strong>125 kN ciągu bez dopalania oraz 191,3 kN z dopalaczem</strong> –
+                        to najmocniejsza jednostka napędowa kiedykolwiek zainstalowana w seryjnym
+                        samolocie myśliwskim.
+                    </p>
+                    <p>
+                        Ząbkowana krawędź dyszy wylotowej silnika redukuje zarówno skuteczną
+                        powierzchnię odbicia radarowego z tylnej półsfery, jak i sygnaturę
+                        termiczną spalin (Stealth w podczerwieni).
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKCJA 3: TABELA TAKTYCZNO-TECHNICZNA -->
+    <section id="specyfikacja" class="content-section">
+        <div class="section-header">
+            <h2>Specyfikacja Taktyczno-Techniczna</h2>
+            <p>Zestawienie parametrów samolotu F-35A Lightning II (Block 4 / TR-3) dla Polski</p>
+        </div>
+
+        <div class="table-container">
+            <table class="tech-table">
+                <thead>
+                <tr>
+                    <th>Kategoria</th>
+                    <th>Parametr</th>
+                    <th>Wartość / Specyfikacja</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Producent</strong></td>
+                    <td>Główny wykonawca</td>
+                    <td>Lockheed Martin Aeronautics (USA)</td>
+                </tr>
+                <tr>
+                    <td><strong>Załoga</strong></td>
+                    <td>Konfiguracja kabiny</td>
+                    <td>1 pilot (interfejs panoramiczny + hełm Gen III HMDS)</td>
+                </tr>
+                <tr>
+                    <td><strong>Wymiary</strong></td>
+                    <td>Rozpiętość skrzydeł / Długość / Wysokość</td>
+                    <td>10,70 m / 15,67 m / 4,38 m</td>
+                </tr>
+                <tr>
+                    <td><strong>Masa</strong></td>
+                    <td>Masa własna / Maksymalna masa startowa</td>
+                    <td>13 290 kg / 31 750 kg</td>
+                </tr>
+                <tr>
+                    <td><strong>Napęd</strong></td>
+                    <td>Silnik turbowentylatorowy</td>
+                    <td>1 × Pratt &amp; Whitney F135-PW-100 (191,3 kN z dopalaniem)</td>
+                </tr>
+                <tr>
+                    <td><strong>Osiągi</strong></td>
+                    <td>Prędkość maksymalna</td>
+                    <td>Mach 1,6 (ok. 1 960 km/h z pełnym uzbrojeniem wewnętrznym)</td>
+                </tr>
+                <tr>
+                    <td><strong>Zasięg</strong></td>
+                    <td>Zasięg na paliwie wewnętrznym (8 278 kg paliwa)</td>
+                    <td>ponad 2 200 km (promień bojowy ok. 1 240 km bez podwieszeń)</td>
+                </tr>
+                <tr>
+                    <td><strong>Uzbrojenie stałe</strong></td>
+                    <td>Artyleria pokładowa i węzły</td>
+                    <td>Działko GAU-22/A kal. 25 mm + 4 węzły wewnętrzne + 6 zewnętrznych</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SEKCJA 4: GALERIA ZDJĘĆ (CSS GRID) -->
+    <section id="galeria" class="content-section">
+        <div class="section-header">
+            <h2>Galeria Operacyjna F-35A Husarz</h2>
+            <p>Prezentacja możliwości samolotów piątej generacji dla Sił Powietrznych RP</p>
+        </div>
+
+        <div class="gallery-grid">
+            <figure class="gallery-item">
+                <img src="assets/img/f35_image1.jpeg"
+                     onerror="this.src='https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80'"
+                     alt="Myśliwiec piątej generacji F-35A Husarz podczas kołowania na pasie startowym">
+                <figcaption>F-35A Husarz w malowaniu o obniżonej wykrywalności radarowej</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/img/f35_radar.jpeg"
+                     onerror="this.src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80'"
+                     alt="Samolot F-35A Lightning II w locie na dużym pułapie z widocznym systemem EOTS pod dziobem">
+                <figcaption>Grafika prezentujaca F35-A i jego radar</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/img/f35_image2.jpeg"
+                     onerror="this.src='https://images.unsplash.com/photo-1519074069444-1ba4ea16e66c?auto=format&fit=crop&w=800&q=80'"
+                     alt="F-35A podczas dynamicznego wirażu z zamknietymi komorami uzbrojenia">
+                <figcaption>Demonstracja zwrotności i zewnetrznych komór uzbrojenia</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/img/f35_engine.jpeg"
+                     onerror="this.src='https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80'"
+                     alt="Widok na silnik Pratt & Whitney F135">
+                <figcaption>Silnik F135 o ciągu ponad 191 kN podczas startu</figcaption>
+            </figure>
+        </div>
+    </section>
+
+</main>
+
+<!-- STOPKA -->
+<footer>
+    <div class="footer-inner">
+        <p>&copy; 2026 Autor: <strong>Patryk Legierski</strong> | Projekt: Wprowadzenie do aplikacji internetowych</p>
+        <p class="footer-note">Strona ma charakter fanowski i hobbystyczny. Nie jest oficjalnym serwisem MON ani WP.</p>
+    </div>
+</footer>
 
 </body>
 </html>
