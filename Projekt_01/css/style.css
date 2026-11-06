@@ -886,3 +886,77 @@ footer {
         font-size: 0.85rem;
     }
 }
+
+/* =========================================================
+   STYLE PODEFEKTÓW JAVASCRIPT
+   ========================================================= */
+
+/* Płynne przejście zdjęcia w celowniku HUD przy scrollowaniu */
+#showcase-main-img {
+    transition: opacity 0.25s ease-in-out, transform 0.5s ease;
+}
+
+.img-fade-out {
+    opacity: 0.15;
+}
+
+/* Podświetlenie aktualnie czytanej karty modułu */
+.step-card.active-step {
+    border-color: #ff6b81;
+    box-shadow: 0 0 28px rgba(220, 20, 60, 0.35);
+    transform: translateX(-6px);
+}
+
+/* Zegar UTC w górnym pasku */
+.utc-clock {
+    margin-left: auto;
+    font-family: 'Chakra Petch', sans-serif;
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+/* Przycisk zmiany trybu Noktowizji (HUD) w nawigacji */
+.hud-toggle-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-light);
+    border: 1px solid var(--glass-border);
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.hud-toggle-btn:hover {
+    border-color: var(--crimson);
+    background: rgba(220, 20, 60, 0.18);
+}
+
+/* TRYB NOKTOWIZJI / ZIELONY HUD (aktywowany przez JS i localStorage) */
+body.hud-night-mode {
+    --crimson: #10b981;                  /* Zamiana czerwieni na taktyczną zieleń */
+    --dark-navy: rgba(4, 22, 14, 0.86);  /* Ciemnozielone tło paneli */
+    --glass-border: rgba(16, 185, 129, 0.35);
+}
+
+body.hud-night-mode .sky-container {
+    filter: hue-rotate(95deg) brightness(0.65) contrast(1.25);
+}
+
+body.hud-night-mode .badge,
+body.hud-night-mode .card-link,
+body.hud-night-mode .stat-label,
+body.hud-night-mode .step-number,
+body.hud-night-mode .info-label,
+body.hud-night-mode #hud-mode-label {
+    color: #34d399;
+}
+
+body.hud-night-mode .hud-toggle-btn {
+    border-color: #10b981;
+    color: #34d399;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
