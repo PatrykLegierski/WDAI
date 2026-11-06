@@ -938,12 +938,14 @@ footer {
 /* TRYB NOKTOWIZJI / ZIELONY HUD (aktywowany przez JS i localStorage) */
 body.hud-night-mode {
     --crimson: #10b981;                  /* Zamiana czerwieni na taktyczną zieleń */
-    --dark-navy: rgba(4, 22, 14, 0.86);  /* Ciemnozielone tło paneli */
+    --dark-navy: rgba(12, 16, 20, 0.88); /* Ciemnoszare/czarne tło paneli */
     --glass-border: rgba(16, 185, 129, 0.35);
+    background-color: #050507;           /* Głęboka czerń pod spodem */
 }
 
 body.hud-night-mode .sky-container {
-    filter: hue-rotate(95deg) brightness(0.65) contrast(1.25);
+    /* Szaro-czarne nocne niebo bez fioletowego zafarbu */
+    filter: grayscale(100%) brightness(0.55) contrast(1.2);
 }
 
 body.hud-night-mode .badge,
@@ -959,4 +961,36 @@ body.hud-night-mode .hud-toggle-btn {
     border-color: #10b981;
     color: #34d399;
     box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Naprawa czerwonych obramowań, poświaty kart, tabeli i celownika w trybie noktowizji */
+body.hud-night-mode .step-card.active-step {
+    border-color: #10b981;
+    box-shadow: 0 0 28px rgba(16, 185, 129, 0.35);
+}
+
+body.hud-night-mode .step-card:hover,
+body.hud-night-mode .kafelek:hover {
+    border-color: rgba(16, 185, 129, 0.8);
+}
+
+body.hud-night-mode .tech-table th,
+body.hud-night-mode .badge,
+body.hud-night-mode .hud-toggle-btn:hover {
+    background: rgba(16, 185, 129, 0.18);
+    border-color: rgba(16, 185, 129, 0.45);
+}
+
+body.hud-night-mode .showcase-img-container {
+    border-color: rgba(16, 185, 129, 0.45);
+}
+
+body.hud-night-mode .hud-crosshair::before,
+body.hud-night-mode .hud-crosshair::after {
+    background: rgba(16, 185, 129, 0.75);
+}
+
+body.hud-night-mode .btn-primary:hover,
+body.hud-night-mode .btn-submit:hover {
+    background: #059669;
 }
