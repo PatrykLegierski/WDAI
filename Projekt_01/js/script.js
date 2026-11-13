@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const hours = String(now.getUTCHours()).padStart(2, '0');
             const minutes = String(now.getUTCMinutes()).padStart(2, '0');
             const seconds = String(now.getUTCSeconds()).padStart(2, '0');
-            clockSpan.textContent = `CZAS OPERACYJNY: ${hours}:${minutes}:${seconds} UTC (ZULU)`;
+            clockSpan.textContent = `CZAS: ${hours}:${minutes}:${seconds} UTC (ZULU)`;
         };
 
         updateClock();

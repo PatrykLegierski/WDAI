@@ -649,7 +649,7 @@ footer {
 }
 
 /* =========================================================
-   PODSTRONA KONTAKTU I FORMULARZ (WALIDACJA HTML5)
+   PODSTRONA KONTAKTU I FORMULARZ
    ========================================================= */
 .contact-layout {
     display: grid;
@@ -821,8 +821,10 @@ footer {
 }
 
 /* =========================================================
-   RESPONSYWNOŚĆ (RWD - MEDIA QUERIES ZA 2.0 PKT)
+   RESPONSYWNOŚĆ
    ========================================================= */
+
+/*todo zrób hamburgera czyli pasek który sie wysuwa po kliknęciu z lewej tak będzie czytleniej
 
 /* Tablety i mniejsze laptopy (poniżej 992px) */
 @media (max-width: 992px) {
