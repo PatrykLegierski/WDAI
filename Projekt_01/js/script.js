@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navContainer = document.querySelector('.nav-container');
 
     if (navContainer) {
-        // Tworzymy przycisk przełącznika i dodajemy go do paska nawigacji
+        // Tworzymy przycisk
         const hudBtn = document.createElement('button');
         hudBtn.type = 'button';
         hudBtn.className = 'hud-toggle-btn';
@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Odczytujemy zapisaną preferencję użytkownika z pamięci przeglądarki (localStorage)
+        // Odczytujemy zapisaną (localStorage)
         const savedMode = localStorage.getItem('psp_hud_mode');
         applyHudMode(savedMode === 'night');
 
-        //Reagujemy na kliknięcie przycisku przez użytkownika
+        //Reagujemy na kliknięcie
         hudBtn.addEventListener('click', () => {
             const isCurrentlyNight = document.body.classList.contains('hud-night-mode');
             const newState = !isCurrentlyNight; // Odwracamy stan na przeciwny
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const stepTitle = activeCard.dataset.title;
                     const newImgSrc = activeCard.dataset.img;
 
-                    // 3. Aktualizujemy napisy na wyświetlaczu HUD
+                    // 3. Aktualizujemy napisy
                     stepIndicator.textContent = `SEKCJA ${stepNum} / 0${stepCards.length}`;
                     modeLabel.textContent = `TRYB: ${stepTitle}`;
 
