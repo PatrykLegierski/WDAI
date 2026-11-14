@@ -27,20 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =========================================================================
-       MODUŁ 2: TRYB NOKTOWIZJI / HUD ZAPISYWANY W LOCALSTORAGE
-       ========================================================================= */
-
-
+           MODUŁ 2: TRYB NOKTOWIZJI (LOCALSTORAGE) + MOBILNE MENU HAMBURGER
+           ========================================================================= */
     const navContainer = document.querySelector('.nav-container');
+    const mainNav = navContainer ? navContainer.querySelector('nav') : null;
 
-    if (navContainer) {
-        // Tworzymy przycisk
+    if (navContainer && mainNav) {
         const hudBtn = document.createElement('button');
         hudBtn.type = 'button';
         hudBtn.className = 'hud-toggle-btn';
-        navContainer.appendChild(hudBtn);
+        mainNav.appendChild(hudBtn);
 
-        // Funkcja ustawiająca wygląd strony na podstawie stanu (true / false)
         const applyHudMode = (isNightMode) => {
             if (isNightMode) {
                 document.body.classList.add('hud-night-mode');
@@ -51,20 +48,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Odczytujemy zapisaną (localStorage)
         const savedMode = localStorage.getItem('psp_hud_mode');
         applyHudMode(savedMode === 'night');
 
-        //Reagujemy na kliknięcie
         hudBtn.addEventListener('click', () => {
             const isCurrentlyNight = document.body.classList.contains('hud-night-mode');
-            const newState = !isCurrentlyNight; // Odwracamy stan na przeciwny
-
+            const newState = !isCurrentlyNight;
             applyHudMode(newState);
             localStorage.setItem('psp_hud_mode', newState ? 'night' : 'standard');
         });
-    }
 
+        //  przycisk Hamburger
+        const hamburgerBtn = document.createElement('button');
+        hamburgerBtn.type = 'button';
+        hamburgerBtn.className = 'hamburger-btn';
+        hamburgerBtn.setAttribute('aria-label', 'Otwórz menu nawigacji');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        hamburgerBtn.innerHTML = '<span></span><span></span><span></span>';
+        navContainer.appendChild(hamburgerBtn);
+
+        // Otwieranie / zamykanie w hamburger
+        hamburgerBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Zapobiega natychmiastowemu zamknięciu przez kliknięcie w dokument
+            const isOpen = mainNav.classList.toggle('nav-open');
+            hamburgerBtn.classList.toggle('is-active', isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        // Automatyczne zamknięcie hamburger
+        document.addEventListener('click', (event) => {
+            if (mainNav.classList.contains('nav-open') && !mainNav.contains(event.target)) {
+                mainNav.classList.remove('nav-open');
+                hamburgerBtn.classList.remove('is-active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 
     /* =========================================================================
        MODUŁ 3: SCROLL-DRIVEN IMAGE SHOWCASE (F-16, FA-50, F-35)

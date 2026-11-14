@@ -821,10 +821,74 @@ footer {
 }
 
 /* =========================================================
-   RESPONSYWNOŚĆ
+   MENU HAMBURGER I WYSUWANY PANEL MOBILNY
    ========================================================= */
 
-/*todo zrób hamburgera czyli pasek który sie wysuwa po kliknęciu z lewej tak będzie czytleniej
+/* Układ nawigacji na dużych ekranach (linki + przycisk noktowizji obok siebie) */
+.nav-container nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+/* Przycisk hamburgera (domyślnie ukryty na komputerach) */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 110;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.hamburger-btn:hover {
+    border-color: var(--crimson);
+    background: rgba(220, 20, 60, 0.15);
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.25s ease, background-color 0.3s ease;
+}
+
+/* Animacja 3 kresek w krzyżyk (X) po otwarciu menu */
+.hamburger-btn.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Dopasowanie hamburgera i szuflady do trybu Noktowizji */
+body.hud-night-mode .hamburger-btn:hover {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.18);
+}
+
+body.hud-night-mode .hamburger-btn.is-active span {
+    background-color: #34d399;
+}
+
+/* =========================================================
+   RESPONSYWNOŚĆ (RWD - MEDIA QUERIES)
+   ========================================================= */
 
 /* Tablety i mniejsze laptopy (poniżej 992px) */
 @media (max-width: 992px) {
@@ -833,17 +897,31 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Na mniejszych ekranach panel HUD zostaje na górze sekcji, ale zmniejsza wysokość,
-       żeby nie zasłaniać przewijanych kart na małym ekranie */
+    /* Przyklejony celownik HUD poniżej górnego paska nawigacji */
     .sticky-visual {
-        position: relative;
-        top: 0;
-        margin-bottom: 24px;
+        position: sticky;
+        top: 112px;
+        z-index: 20;
+        margin-bottom: 16px;
+    }
+
+    /* Zwiększamy krycie tła ramki HUD, aby przewijane pod nią karty nie prześwitywały */
+    .sticky-visual .hud-frame {
+        background: rgba(8, 14, 26, 0.96);
+        padding: 10px 12px;
+    }
+
+    body.hud-night-mode .sticky-visual .hud-frame {
+        background: rgba(10, 15, 18, 0.97);
+    }
+
+    .showcase-img-container {
+        height: 230px;
     }
 
     .scroll-steps {
-        gap: 32px;
-        padding: 0;
+        gap: 64px;
+        padding: 16px 0 110px;
     }
 
     .hero-card h2 {
@@ -851,28 +929,108 @@ footer {
     }
 }
 
-/* Smartfony (poniżej 640px) */
-@media (max-width: 640px) {
+/* Urządzenia mobilne (poniżej 768px) — aktywacja menu hamburger + mobilny HUD */
+@media (max-width: 768px) {
+    /* clip zamiast hidden blokuje poziomy pasek przewijania bez psucia position: sticky */
+    html, body {
+        overflow-x: clip;
+    }
+
     .gov-bar {
         font-size: 0.62rem;
         justify-content: center;
         text-align: center;
     }
 
+    .utc-clock {
+        display: none;
+    }
+
     .nav-container {
+        flex-wrap: nowrap;
+        padding: 12px 5%;
+    }
+
+    .logo-text h1 {
+        font-size: 1.1rem;
+    }
+
+    /* Pokazujemy przycisk hamburgera */
+    .hamburger-btn {
+        display: flex;
+        margin-left: auto;
+    }
+
+    /* Wysuwany panel nawigacji */
+    .nav-container nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 280px;
+        max-width: 85vw;
+        min-height: 100vh;
+        background: rgba(8, 14, 26, 0.96);
+        backdrop-filter: blur(18px);
+        border-left: 1px solid var(--glass-border);
+        border-top: 1px solid var(--glass-border);
+        padding: 32px 24px;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+        align-items: stretch;
+        gap: 28px;
+        box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.75);
+
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0.35s;
+        z-index: 99;
+    }
+
+    body.hud-night-mode .nav-container nav {
+        background: rgba(10, 15, 18, 0.97);
+    }
+
+    .nav-container nav.nav-open {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 14px;
-        border-top: 1px solid var(--glass-border);
-        padding-top: 10px;
+        flex-direction: column;
+        gap: 6px;
     }
 
+    .nav-links a {
+        display: block;
+        padding: 12px 8px;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hud-toggle-btn {
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    /* Dopasowanie wysokości mobilnego HUD pod smuklejszy nagłówek */
+    .sticky-visual {
+        top: 102px;
+    }
+
+    .showcase-img-container {
+        height: 185px;
+    }
+
+    .hud-top-bar,
+    .hud-bottom-bar {
+        font-size: 0.64rem;
+        padding: 5px 2px;
+    }
+
+    /* Dopasowanie pozostałych sekcji na smartfonie */
     .hero-card,
     .contact-info-card,
     .contact-form-card,
@@ -882,10 +1040,6 @@ footer {
 
     .hero-card h2 {
         font-size: 1.75rem;
-    }
-
-    .showcase-img-container {
-        height: 250px;
     }
 
     .kafelki-kontener,
