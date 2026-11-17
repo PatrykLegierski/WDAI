@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 — Ćwiczenie 1: Stoper</title>
+    <link rel="stylesheet" href="css/cw1.css">
+</head>
+
+<body>
+
+<main class="stopwatch-card">
+    <h1>Stoper</h1>
+
+    <!-- Miejsce, w którym JavaScript będzie aktualizował czas -->
+    <div id="timer-display" class="timer-display">0s</div>
+
+    <!-- Przyciski sterujące -->
+    <div class="controls">
+        <button type="button" id="start-btn" class="btn btn-start">start</button>
+        <button type="button" id="stop-btn" class="btn btn-stop" disabled>stop</button>
+        <button type="button" id="reset-btn" class="btn btn-reset">reset</button>
+    </div>
+</main>
+
+<!-- Podłączenie skryptu na końcu, gdy elementy HTML są już załadowane -->
+<script src="js/cw1.js"></script>
+</body>
+
+</html>
