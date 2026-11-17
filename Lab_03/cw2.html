@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 — Ćwiczenie 2: Generator haseł</title>
+    <link rel="stylesheet" href="css/cw2.css">
+</head>
+<body>
+
+<main class="generator-card">
+    <h1>Generator haseł</h1>
+
+    <div class="field">
+        <label for="min-length">Minimalna długość hasła:</label>
+        <input type="text" id="min-length" value="8">
+    </div>
+
+    <div class="field">
+        <label for="max-length">Maksymalna długość hasła:</label>
+        <input type="text" id="max-length" value="16">
+    </div>
+
+    <div class="field checkbox-field">
+        <input type="checkbox" id="include-uppercase">
+        <label for="include-uppercase">Czy hasło ma zawierać wielkie litery?</label>
+    </div>
+
+    <div class="field checkbox-field">
+        <input type="checkbox" id="include-special">
+        <label for="include-special">Czy hasło ma zawierać znaki specjalne?</label>
+    </div>
+
+    <button type="button" id="generate-btn">Wygeneruj hasło</button>
+</main>
+
+<script src="js/cw2.js"></script>
+</body>
+</html>
