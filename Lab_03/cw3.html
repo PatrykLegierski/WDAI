@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 — Ćwiczenie 3: Produkty z API</title>
+    <link rel="stylesheet" href="css/cw3.css">
+</head>
+<body>
+
+<main class="container">
+    <h1>Lista produktów</h1>
+
+    <!-- Kontrolki filtrowania -->
+    <div class="controls">
+        <input type="text" id="search-input" placeholder="Wpisz frazę, aby przefiltrować...">
+
+        <select id="sort-select">
+            <option value="original">Oryginalna kolejność</option>
+            <option value="asc">Rosnąco (A-Z)</option>
+            <option value="desc">Malejąco (Z-A)</option>
+        </select>
+    </div>
+
+    <!-- Tabela, JS wstrzyknie wiersze -->
+    <table>
+        <thead>
+        <tr>
+            <th>Zdjęcie</th>
+            <th>Tytuł</th>
+            <th>Opis</th>
+        </tr>
+        </thead>
+        <tbody id="products-body"></tbody>
+    </table>
+</main>
+
+<script src="js/cw3.js"></script>
+</body>
+</html>
