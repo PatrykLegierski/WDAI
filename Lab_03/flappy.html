@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 — Flappy Bird</title>
+    <link rel="stylesheet" href="css/flappy.css">
+</head>
+<body>
+
+<main class="game-wrapper">
+    <canvas id="game-canvas" width="360" height="640"></canvas>
+
+    <!-- Nakładka ekranu końcowego (ukryta w trakcie gry) -->
+    <div id="gameover-panel" class="gameover-panel" hidden>
+        <p id="record-banner" class="record-banner" hidden>GRATULACJE! NOWY REKORD!</p>
+        <p>Twój wynik: <strong id="final-score">0</strong></p>
+        <p>Najlepszy wynik: <strong id="best-score">0</strong></p>
+
+        <h3>Top 5 wyników</h3>
+        <ol id="leaderboard-list"></ol>
+
+        <button type="button" id="restart-btn">Zagraj ponownie</button>
+    </div>
+</main>
+
+<script src="js/flappy.js"></script>
+</body>
+</html>
